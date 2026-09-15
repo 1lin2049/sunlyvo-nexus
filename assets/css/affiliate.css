@@ -1,0 +1,30 @@
+/**
+ * 分销中心样式
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+.slv-affiliate-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--ant-margin);
+    margin: var(--ant-margin-lg) 0;
+}
+
+.slv-referral-url {
+    display: flex;
+    gap: var(--ant-margin-xs);
+    margin: var(--ant-margin) 0;
+}
+
+.slv-referral-url input {
+    flex: 1;
+    padding: var(--ant-margin-xs) var(--ant-margin-sm);
+    font-size: var(--ant-font-size);
+    font-family: var(--ant-font-family-code);
+    border: 1px solid var(--ant-border-color);
+    border-radius: var(--ant-border-radius);
+    background: var(--ant-gray-2);
+    color: var(--ant-text-primary);
+}

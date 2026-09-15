@@ -1,0 +1,335 @@
+/**
+ * SunLyvo 控制面板样式
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+.slv-dashboard-wrap {
+    max-width: 1400px;
+    padding-bottom: 40px;
+}
+
+/* ==================== 标题区 ==================== */
+.slv-dashboard-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 20px 0 8px;
+}
+
+.slv-dashboard-title .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #00a658;
+}
+
+.slv-dashboard-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 24px;
+}
+
+.slv-dashboard-subtitle a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.slv-dashboard-subtitle a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== 分节标题 ==================== */
+.slv-dash-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.slv-dash-section-title .dashicons {
+    color: #666;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* ==================== 统计网格 ==================== */
+.slv-dash-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.slv-dash-grid--stats {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.slv-dash-grid--content {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+/* ==================== 统计卡片 ==================== */
+.slv-dash-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.slv-dash-card:hover {
+    border-color: #00a658;
+    box-shadow: 0 4px 12px rgba(0, 166, 88, 0.08);
+}
+
+.slv-dash-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f6ffed 0%, #e6fff3 100%);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.slv-dash-card__icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #00a658;
+}
+
+.slv-dash-card__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.slv-dash-card__label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.slv-dash-card__value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.slv-dash-card__sub {
+    font-size: 12px;
+    color: #999;
+}
+
+.slv-dash-card__link {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.slv-dash-card:hover .slv-dash-card__link {
+    color: #00a658;
+}
+
+/* ==================== 内容统计块 ==================== */
+.slv-dash-stat {
+    display: block;
+    padding: 16px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.slv-dash-stat:hover {
+    background: #f6ffed;
+    border-color: #00a658;
+}
+
+.slv-dash-stat__label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.slv-dash-stat__value {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.slv-dash-stat:hover .slv-dash-stat__value {
+    color: #00a658;
+}
+
+/* ==================== 系统状态 ==================== */
+.slv-dash-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px 24px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.slv-dash-status__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+}
+
+.slv-dash-status__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.slv-dash-status__dot.is-ok {
+    background: #52c41a;
+    box-shadow: 0 0 0 3px rgba(82, 196, 26, 0.15);
+}
+
+.slv-dash-status__dot.is-warn {
+    background: #faad14;
+    box-shadow: 0 0 0 3px rgba(250, 173, 20, 0.15);
+}
+
+.slv-dash-status__label {
+    color: #666;
+    flex: 1;
+}
+
+.slv-dash-status__value {
+    color: #1d2327;
+    font-weight: 500;
+}
+
+/* ==================== 快速入口 ==================== */
+.slv-dash-quick {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.slv-dash-quick__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.slv-dash-quick__item:hover {
+    border-color: #00a658;
+    background: #f6ffed;
+    transform: translateX(2px);
+}
+
+.slv-dash-quick__item > .dashicons:first-child {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    color: #666;
+    flex-shrink: 0;
+}
+
+.slv-dash-quick__item:hover > .dashicons:first-child {
+    color: #00a658;
+}
+
+.slv-dash-quick__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.slv-dash-quick__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d2327;
+}
+
+.slv-dash-quick__desc {
+    font-size: 12px;
+    color: #999;
+}
+
+.slv-dash-quick__arrow {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: #ccc;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+}
+
+.slv-dash-quick__item:hover .slv-dash-quick__arrow {
+    color: #00a658;
+}
+
+/* ==================== 底部 ==================== */
+.slv-dash-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.slv-dash-footer a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.slv-dash-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 782px) {
+    .slv-dash-grid--stats,
+    .slv-dash-grid--content,
+    .slv-dash-status,
+    .slv-dash-quick {
+        grid-template-columns: 1fr;
+    }
+
+    .slv-dashboard-title {
+        font-size: 20px;
+    }
+}

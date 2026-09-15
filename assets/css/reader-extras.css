@@ -1,0 +1,290 @@
+/**
+ * Reader 附加功能
+ *
+ * - 位置记忆提示条
+ * - 复制/引用/分享浮层
+ * - 打印样式
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+/* ==================== 位置记忆提示条 ==================== */
+.slv-reader-resume {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(8px);
+    background: #1d2327;
+    color: #e6edf3;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+    max-width: calc(100vw - 32px);
+}
+
+.slv-reader-resume.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.slv-reader-resume__text {
+    color: #e6edf3;
+}
+
+.slv-reader-resume__actions {
+    display: flex;
+    gap: 8px;
+}
+
+.slv-reader-resume__btn {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.slv-reader-resume__btn--primary {
+    background: var(--wp--preset--color--brand-6);
+    color: #000;
+    font-weight: 600;
+}
+
+.slv-reader-resume__btn--primary:hover {
+    background: var(--wp--preset--color--brand-7);
+}
+
+.slv-reader-resume__btn--dismiss {
+    background: transparent;
+    color: #8c8c8c;
+}
+
+.slv-reader-resume__btn--dismiss:hover {
+    color: #fff;
+}
+
+/* ==================== 选中文本复制浮层 ==================== */
+.slv-reader-share {
+    position: absolute;
+    background: #1d2327;
+    border-radius: 6px;
+    padding: 4px;
+    display: flex;
+    gap: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 180;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 150ms ease, visibility 150ms ease;
+    pointer-events: auto;
+}
+
+.slv-reader-share.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slv-reader-share__btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #e6edf3;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 150ms ease;
+    font-size: 12px;
+}
+
+.slv-reader-share__btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.slv-reader-share__btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.slv-reader-share__toast {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #1d2327;
+    color: #e6edf3;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease;
+}
+
+.slv-reader-share__toast.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ==================== 主题切换按钮 ==================== */
+.slv-reader-theme-toggle {
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--wp--preset--color--gray-4);
+    background: var(--wp--preset--color--gray-1);
+    color: var(--wp--preset--color--gray-8);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 200ms ease;
+}
+
+.slv-reader-theme-toggle:hover {
+    border-color: var(--wp--preset--color--brand-6);
+    color: var(--wp--preset--color--brand-8);
+}
+
+.slv-reader-theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 深色模式 */
+html[data-theme="dark"] {
+    --slv-color-bg-page: #0d1117;
+    --slv-color-bg-subtle: #161b22;
+    --slv-color-bg-muted: #21262d;
+    --slv-color-text-primary: #e6edf3;
+    --slv-color-text-secondary: #8b949e;
+    --slv-color-border: #30363d;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .slv-reader {
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+html[data-theme="dark"] .slv-chapter__title,
+html[data-theme="dark"] .slv-chapter__body h2,
+html[data-theme="dark"] .slv-chapter__body h3 {
+    color: #e6edf3;
+}
+
+html[data-theme="dark"] .slv-chapter__body {
+    color: #e6edf3;
+}
+
+html[data-theme="dark"] .slv-chapter__header {
+    border-bottom-color: #30363d;
+}
+
+html[data-theme="dark"] .slv-chapter__nav {
+    border-top-color: #30363d;
+}
+
+html[data-theme="dark"] .slv-chapter__nav-item {
+    border-color: #30363d;
+}
+
+html[data-theme="dark"] .slv-chapter__nav-item:hover {
+    background: #161b22;
+}
+
+html[data-theme="dark"] .slv-chapter__body pre {
+    background: #010409;
+    border: 1px solid #30363d;
+}
+
+html[data-theme="dark"] .slv-chapter__body code:not(pre code) {
+    background: #21262d;
+    color: #1aff94;
+}
+
+html[data-theme="dark"] .slv-chapter__paywall {
+    background: #161b22;
+    border-color: #30363d;
+}
+
+html[data-theme="dark"] .slv-reader-theme-toggle {
+    background: #161b22;
+    border-color: #30363d;
+    color: #8b949e;
+}
+
+/* ==================== 打印样式 ==================== */
+@media print {
+    .slv-reader__progress,
+    .slv-reader-theme-toggle,
+    .slv-reader-share,
+    .slv-reader-resume,
+    .slv-masthead,
+    .slv-colophon,
+    .slv-chapter__nav,
+    .slv-chapter__notice,
+    .slv-comments {
+        display: none !important;
+    }
+
+    .slv-reader__container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .slv-chapter__body {
+        font-size: 11pt;
+        line-height: 1.6;
+        color: #000;
+    }
+
+    .slv-chapter__body a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .slv-chapter__body a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+
+    .slv-chapter__body pre {
+        background: #f5f5f5;
+        color: #000;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    .slv-chapter__title {
+        color: #000;
+        page-break-after: avoid;
+    }
+
+    .slv-chapter__body h2,
+    .slv-chapter__body h3 {
+        color: #000;
+        page-break-after: avoid;
+    }
+}

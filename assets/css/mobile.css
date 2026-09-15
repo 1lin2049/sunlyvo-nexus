@@ -1,0 +1,104 @@
+/**
+ * 移动端覆盖
+ *
+ * 断点仅用 1024 / 900 / 640 / 375
+ */
+
+@media (max-width: 1024px) {
+    .slv-container {
+        padding: 0 var(--slv-space-6);
+    }
+
+    .slv-collection__header {
+        grid-template-columns: 1fr;
+        gap: var(--slv-space-6);
+    }
+
+    .slv-collection__cover {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --slv-font-size-3xl: 28px;
+        --slv-font-size-2xl: 22px;
+        --slv-font-size-xl:  18px;
+    }
+
+    .slv-main {
+        padding: var(--slv-space-6) 0 var(--slv-space-12);
+    }
+
+    .slv-collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slv-collection__cover {
+        max-width: none;
+    }
+
+    .slv-masthead__inner {
+        flex-wrap: wrap;
+        gap: var(--slv-space-3);
+    }
+
+    .slv-primary-menu {
+        gap: var(--slv-space-4);
+    }
+
+    .slv-colophon__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --slv-font-size-3xl: 24px;
+        --slv-font-size-2xl: 20px;
+        --slv-font-size-xl:  17px;
+        --slv-font-size-md:  15px;
+        --slv-font-size-base: 14px;
+    }
+
+    .slv-container {
+        padding: 0 var(--slv-space-4);
+    }
+
+    .slv-chapter-list__link,
+    .slv-preview-list__link {
+        grid-template-columns: 44px 1fr;
+        gap: var(--slv-space-3);
+        padding: var(--slv-space-3) var(--slv-space-2);
+    }
+
+    .slv-chapter-list__meta,
+    .slv-preview-list__meta {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: var(--slv-space-2);
+    }
+
+    .slv-collection__title,
+    .slv-archive-title,
+    .slv-preview-title {
+        font-size: var(--slv-font-size-2xl);
+    }
+
+    .slv-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .slv-container {
+        padding: 0 var(--slv-space-3);
+    }
+
+    .slv-collection-card__body {
+        padding: var(--slv-space-4);
+    }
+}

@@ -1,0 +1,50 @@
+/**
+ * 后台电商样式
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+.slv-admin-order-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+}
+
+.slv-admin-order-action {
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid #c3c4c7;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 150ms ease;
+}
+
+.slv-admin-order-action:hover {
+    border-color: #2271b1;
+    color: #2271b1;
+}
+
+.slv-admin-order-action--danger {
+    color: #a00;
+    border-color: #a00;
+}
+
+.slv-admin-order-action--danger:hover {
+    background: #a00;
+    color: #fff;
+}
+
+.slv-admin-order-action--primary {
+    background: #00a658;
+    color: #fff;
+    border-color: #00a658;
+}
+
+.slv-admin-order-action--primary:hover {
+    background: #00733d;
+    border-color: #00733d;
+    color: #fff;
+}

@@ -1,0 +1,196 @@
+/**
+ * 深色模式
+ *
+ * 自动跟随系统偏好，同时支持手动切换（data-theme="dark"）。
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+/* 系统深色模式 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        /* Ant Design Token 深色覆盖 */
+        --ant-text-primary:       rgba(255, 255, 255, 0.88);
+        --ant-text-secondary:     rgba(255, 255, 255, 0.65);
+        --ant-text-tertiary:      rgba(255, 255, 255, 0.45);
+        --ant-text-quaternary:    rgba(255, 255, 255, 0.25);
+
+        --ant-bg-container:       #1f1f1f;
+        --ant-bg-elevated:        #262626;
+        --ant-bg-layout:          #141414;
+
+        --ant-border-color:       #434343;
+        --ant-border-color-split: #303030;
+
+        --ant-gray-2:             #1f1f1f;
+        --ant-gray-3:             #262626;
+
+        --ant-box-shadow:          0 1px 2px 0 rgba(0, 0, 0, 0.3),
+                                   0 1px 6px -1px rgba(0, 0, 0, 0.2),
+                                   0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        --ant-box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.4),
+                                    0 3px 6px -4px rgba(0, 0, 0, 0.5),
+                                    0 9px 28px 8px rgba(0, 0, 0, 0.3);
+
+        /* 基础色板深色调整 */
+        --slv-bg-page:   #0d1117;
+        --slv-bg-subtle: #161b22;
+        --slv-bg-muted:  #21262d;
+        --slv-bg-code:   #010409;
+
+        --slv-text-primary:   #e6edf3;
+        --slv-text-secondary: #8b949e;
+        --slv-text-muted:     #6e7681;
+
+        --slv-border-subtle:  #30363d;
+        --slv-border-base:    #30363d;
+        --slv-border-strong:  #484f58;
+
+        --slv-link-color:       var(--slv-green-5);
+        --slv-link-hover-color: var(--slv-green-4);
+    }
+
+    /* 深色模式下特定组件调整 */
+    :root:not([data-theme="light"]) .slv-header__action:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    :root:not([data-theme="light"]) .slv-collection-card {
+        background: #1f1f1f;
+    }
+
+    :root:not([data-theme="light"]) .slv-btn {
+        background: transparent;
+        color: var(--ant-text-primary);
+        border-color: var(--ant-border-color);
+    }
+
+    :root:not([data-theme="light"]) .slv-btn--primary {
+        background: var(--ant-color-primary);
+        color: #000;
+        border-color: var(--ant-color-primary);
+    }
+
+    :root:not([data-theme="light"]) .slv-btn:hover {
+        color: var(--ant-color-primary);
+        border-color: var(--ant-color-primary);
+    }
+
+    :root:not([data-theme="light"]) .slv-btn--primary:hover {
+        background: var(--ant-color-primary-hover);
+        color: #000;
+    }
+
+    :root:not([data-theme="light"]) .slv-stat-card,
+    :root:not([data-theme="light"]) .slv-cart-empty,
+    :root:not([data-theme="light"]) .slv-chapter__paywall {
+        background: #161b22;
+        border-color: #30363d;
+    }
+
+    :root:not([data-theme="light"]) .slv-chapter__body pre {
+        background: #010409;
+        border: 1px solid #30363d;
+    }
+
+    :root:not([data-theme="light"]) .slv-chapter__body code:not(pre code) {
+        background: #21262d;
+        color: var(--slv-green-5);
+    }
+
+    :root:not([data-theme="light"]) .slv-footer {
+        background: #010409;
+    }
+
+    :root:not([data-theme="light"]) .slv-search-form {
+        background: #161b22;
+        border-color: #30363d;
+    }
+
+    :root:not([data-theme="light"]) .slv-search-form__input {
+        background: transparent;
+        color: var(--ant-text-primary);
+    }
+
+    :root:not([data-theme="light"]) .slv-header__search-panel {
+        background: #161b22;
+    }
+
+    :root:not([data-theme="light"]) .slv-comment-form__field input,
+    :root:not([data-theme="light"]) .slv-comment-form__field textarea {
+        background: #161b22;
+        border-color: #30363d;
+        color: var(--ant-text-primary);
+    }
+}
+
+/* 手动切换深色模式（data-theme="dark"） */
+html[data-theme="dark"] {
+    --ant-text-primary:       rgba(255, 255, 255, 0.88);
+    --ant-text-secondary:     rgba(255, 255, 255, 0.65);
+    --ant-text-tertiary:      rgba(255, 255, 255, 0.45);
+    --ant-text-quaternary:    rgba(255, 255, 255, 0.25);
+
+    --ant-bg-container:       #1f1f1f;
+    --ant-bg-elevated:        #262626;
+    --ant-bg-layout:          #141414;
+
+    --ant-border-color:       #434343;
+    --ant-border-color-split: #303030;
+
+    --slv-bg-page:   #0d1117;
+    --slv-bg-subtle: #161b22;
+    --slv-bg-muted:  #21262d;
+
+    --slv-text-primary:   #e6edf3;
+    --slv-text-secondary: #8b949e;
+    --slv-text-muted:     #6e7681;
+
+    --slv-border-subtle:  #30363d;
+    --slv-border-base:    #30363d;
+    --slv-border-strong:  #484f58;
+}
+
+/* 手动切换浅色模式 */
+html[data-theme="light"] {
+    /* 保持默认浅色 */
+}
+
+/* 深色模式切换按钮（可选，如启用） */
+.slv-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: var(--ant-border-radius);
+    background: transparent;
+    color: var(--ant-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slv-theme-toggle:hover {
+    background: var(--ant-gray-2);
+    color: var(--ant-color-primary);
+}
+
+.slv-theme-toggle__icon {
+    width: 18px;
+    height: 18px;
+}
+
+.slv-theme-toggle .slv-theme-toggle__icon--sun,
+.slv-theme-toggle .slv-theme-toggle__icon--moon {
+    display: none;
+}
+
+html:not([data-theme="dark"]) .slv-theme-toggle .slv-theme-toggle__icon--moon {
+    display: block;
+}
+
+html[data-theme="dark"] .slv-theme-toggle .slv-theme-toggle__icon--sun {
+    display: block;
+}

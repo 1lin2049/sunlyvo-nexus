@@ -1,0 +1,156 @@
+/**
+ * SunLyvo Nexus Design Tokens
+ *
+ * 三层 Token 架构：
+ * - Seed Tokens    原始值（唯一允许硬编码）
+ * - Map Tokens     派生值
+ * - Alias Tokens   语义别名（业务消费）
+ */
+
+:root {
+    /* ==================== Seed Tokens ==================== */
+    /* 品牌色（绿色）*/
+    --slv-green-1:  #e6fff3;
+    --slv-green-2:  #b3ffdb;
+    --slv-green-3:  #80ffc4;
+    --slv-green-4:  #4dffac;
+    --slv-green-5:  #1aff94;
+    --slv-green-6:  #00ff88; /* 品牌主色 */
+    --slv-green-7:  #00d974;
+    --slv-green-8:  #00a658;
+    --slv-green-9:  #00733d;
+    --slv-green-10: #004022;
+
+    /* 中性色 */
+    --slv-gray-0:   #ffffff;
+    --slv-gray-50:  #f8f9fa;
+    --slv-gray-100: #f1f3f5;
+    --slv-gray-200: #e9ecef;
+    --slv-gray-300: #dee2e6;
+    --slv-gray-400: #ced4da;
+    --slv-gray-500: #adb5bd;
+    --slv-gray-600: #6c757d;
+    --slv-gray-700: #495057;
+    --slv-gray-800: #343a40;
+    --slv-gray-900: #212529;
+    --slv-gray-950: #0d1117;
+
+    /* 状态色 */
+    --slv-blue-6:   #1677ff;
+    --slv-blue-8:   #0958d9;
+    --slv-orange-6: #fa8c16;
+    --slv-orange-8: #ad4e00;
+    --slv-red-6:    #f5222d;
+    --slv-red-8:    #a8071a;
+    --slv-purple-6: #722ed1;
+    --slv-purple-8: #531dab;
+
+    /* 间距（4px 网格）*/
+    --slv-space-1:  4px;
+    --slv-space-2:  8px;
+    --slv-space-3:  12px;
+    --slv-space-4:  16px;
+    --slv-space-5:  20px;
+    --slv-space-6:  24px;
+    --slv-space-8:  32px;
+    --slv-space-12: 48px;
+    --slv-space-16: 64px;
+    --slv-space-24: 96px;
+
+    /* 圆角 */
+    --slv-radius-xs: 2px;
+    --slv-radius-sm: 4px;
+    --slv-radius-md: 6px;
+    --slv-radius-lg: 8px;
+    --slv-radius-xl: 12px;
+    --slv-radius-full: 9999px;
+
+    /* 字号 */
+    --slv-font-size-xs:  12px;
+    --slv-font-size-sm:  13px;
+    --slv-font-size-base: 15px;
+    --slv-font-size-md:  16px;
+    --slv-font-size-lg:  18px;
+    --slv-font-size-xl:  22px;
+    --slv-font-size-2xl: 28px;
+    --slv-font-size-3xl: 36px;
+
+    /* 行高 */
+    --slv-line-tight: 1.25;
+    --slv-line-snug:  1.4;
+    --slv-line-base:  1.7;
+    --slv-line-loose: 1.9;
+
+    /* 字重 */
+    --slv-weight-regular: 400;
+    --slv-weight-medium:  500;
+    --slv-weight-bold:    600;
+
+    /* 字体栈 */
+    --slv-font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --slv-font-serif: Georgia, "Songti SC", "SimSun", serif;
+    --slv-font-mono:  "SF Mono", Monaco, "Cascadia Code", Consolas, "Courier New", monospace;
+
+    /* 动效 */
+    --slv-duration-fast:   150ms;
+    --slv-duration-normal: 200ms;
+    --slv-duration-slow:   300ms;
+
+    --slv-ease-in:      cubic-bezier(0.4, 0, 1, 1);
+    --slv-ease-out:     cubic-bezier(0, 0, 0.2, 1);
+    --slv-ease-natural: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 阴影 */
+    --slv-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --slv-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.06);
+    --slv-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    /* 布局 */
+    --slv-content-narrow: 720px;
+    --slv-content-wide:   1200px;
+    --slv-content-max:    1400px;
+    --slv-sidebar-width:  280px;
+
+    /* ==================== Map Tokens ==================== */
+    --slv-color-primary:        var(--slv-green-6);
+    --slv-color-primary-hover:  var(--slv-green-7);
+    --slv-color-primary-active: var(--slv-green-8);
+
+    /* ==================== Alias Tokens ==================== */
+    --slv-bg-page:    var(--slv-gray-0);
+    --slv-bg-subtle:  var(--slv-gray-50);
+    --slv-bg-muted:   var(--slv-gray-100);
+    --slv-bg-code:    var(--slv-gray-950);
+
+    --slv-text-primary:   var(--slv-gray-900);
+    --slv-text-secondary: var(--slv-gray-600);
+    --slv-text-muted:     var(--slv-gray-500);
+    --slv-text-inverse:   var(--slv-gray-0);
+
+    --slv-border-subtle:  var(--slv-gray-200);
+    --slv-border-base:    var(--slv-gray-300);
+    --slv-border-strong:  var(--slv-gray-400);
+
+    --slv-link-color:       var(--slv-green-8);
+    --slv-link-hover-color: var(--slv-green-6);
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --slv-bg-page:   #0d1117;
+        --slv-bg-subtle: #161b22;
+        --slv-bg-muted:  #21262d;
+
+        --slv-text-primary:   #e6edf3;
+        --slv-text-secondary: #8b949e;
+        --slv-text-muted:     #6e7681;
+
+        --slv-border-subtle:  #30363d;
+        --slv-border-base:    #30363d;
+        --slv-border-strong:  #484f58;
+
+        --slv-link-color:       var(--slv-green-5);
+        --slv-link-hover-color: var(--slv-green-4);
+    }
+}

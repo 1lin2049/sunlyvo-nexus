@@ -1,0 +1,148 @@
+/**
+ * Ant Design Design Token 移植
+ *
+ * 将 Ant Design 的 Design Token 体系移植为 CSS Variables，
+ * 使 WordPress 主题完全对齐 Ant Design 视觉体系。
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+:root {
+    /* ==================== Ant Design 系统级色彩 ==================== */
+    /* 品牌主色（Ant Design Blue-6 替换为 SunLyvo Green-6） */
+    --ant-color-primary:         #00ff88;
+    --ant-color-primary-hover:   #00d974;
+    --ant-color-primary-active:  #00a658;
+
+    /* 功能色 */
+    --ant-color-success:  #52c41a;
+    --ant-color-warning:  #faad14;
+    --ant-color-error:    #ff4d4f;
+    --ant-color-info:     #1677ff;
+    --ant-color-link:     #1677ff;
+
+    /* 中性色板（Ant Design 灰阶） */
+    --ant-gray-1:  #ffffff;
+    --ant-gray-2:  #fafafa;
+    --ant-gray-3:  #f5f5f5;
+    --ant-gray-4:  #f0f0f0;
+    --ant-gray-5:  #d9d9d9;
+    --ant-gray-6:  #bfbfbf;
+    --ant-gray-7:  #8c8c8c;
+    --ant-gray-8:  #595959;
+    --ant-gray-9:  #434343;
+    --ant-gray-10: #262626;
+    --ant-gray-11: #1f1f1f;
+    --ant-gray-12: #141414;
+    --ant-gray-13: #000000;
+
+    /* 文本色（Ant Design 语义别名） */
+    --ant-text-primary:       rgba(0, 0, 0, 0.88);
+    --ant-text-secondary:     rgba(0, 0, 0, 0.65);
+    --ant-text-tertiary:      rgba(0, 0, 0, 0.45);
+    --ant-text-quaternary:    rgba(0, 0, 0, 0.25);
+    --ant-text-inverse:       #ffffff;
+
+    /* 背景色（Ant Design 语义别名） */
+    --ant-bg-container:       #ffffff;
+    --ant-bg-elevated:        #ffffff;
+    --ant-bg-layout:          #f5f5f5;
+    --ant-bg-spotlight:       rgba(0, 0, 0, 0.85);
+    --ant-bg-mask:            rgba(0, 0, 0, 0.45);
+
+    /* 边框色（Ant Design 语义别名） */
+    --ant-border-color:       #d9d9d9;
+    --ant-border-color-split: #f0f0f0;
+
+    /* ==================== Ant Design 尺寸 ==================== */
+    /* 字体 */
+    --ant-font-family:         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                               'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+                               'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+                               'Noto Color Emoji';
+    --ant-font-family-code:    'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
+                               Courier, monospace;
+    --ant-font-size:           14px;
+    --ant-font-size-sm:        12px;
+    --ant-font-size-lg:        16px;
+    --ant-font-size-xl:        20px;
+    --ant-font-size-heading-1: 38px;
+    --ant-font-size-heading-2: 30px;
+    --ant-font-size-heading-3: 24px;
+    --ant-font-size-heading-4: 20px;
+    --ant-font-size-heading-5: 16px;
+
+    --ant-line-height:         1.5714285714285714;
+    --ant-line-height-lg:      1.5;
+    --ant-line-height-sm:      1.6666666666666667;
+
+    /* 圆角 */
+    --ant-border-radius:       6px;
+    --ant-border-radius-sm:    4px;
+    --ant-border-radius-lg:    8px;
+    --ant-border-radius-xl:    12px;
+
+    /* 间距（Ant Design 8px 栅格） */
+    --ant-margin-xxs:          4px;
+    --ant-margin-xs:           8px;
+    --ant-margin-sm:           12px;
+    --ant-margin:              16px;
+    --ant-margin-md:           20px;
+    --ant-margin-lg:           24px;
+    --ant-margin-xl:           32px;
+    --ant-margin-xxl:          48px;
+
+    /* 控件高度（Ant Design 标准） */
+    --ant-control-height-sm:   24px;
+    --ant-control-height:      32px;
+    --ant-control-height-lg:   40px;
+
+    /* 阴影（Ant Design 标准） */
+    --ant-box-shadow:          0 1px 2px 0 rgba(0, 0, 0, 0.03),
+                               0 1px 6px -1px rgba(0, 0, 0, 0.02),
+                               0 2px 4px 0 rgba(0, 0, 0, 0.02);
+    --ant-box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+                                0 3px 6px -4px rgba(0, 0, 0, 0.12),
+                                0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+    /* 动效 */
+    --ant-motion-duration-fast:   100ms;
+    --ant-motion-duration-mid:    200ms;
+    --ant-motion-duration-slow:   300ms;
+    --ant-motion-ease-out:        cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ant-motion-ease-in-out:     cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* ==================== Ant Design Pro 布局 ==================== */
+    /* 顶部导航高度 */
+    --ant-pro-layout-header-height:       64px;
+    --ant-pro-layout-header-height-lg:    80px;  /* 展示类页面 */
+    --ant-pro-layout-sider-width:         208px;
+    --ant-pro-layout-sider-collapsed:     48px;
+    --ant-pro-layout-page-padding:        24px;
+    --ant-pro-layout-page-max-width:      1200px;
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ant-text-primary:    rgba(255, 255, 255, 0.85);
+        --ant-text-secondary:  rgba(255, 255, 255, 0.65);
+        --ant-text-tertiary:   rgba(255, 255, 255, 0.45);
+        --ant-text-quaternary: rgba(255, 255, 255, 0.25);
+
+        --ant-bg-container:    #1f1f1f;
+        --ant-bg-elevated:     #262626;
+        --ant-bg-layout:       #141414;
+
+        --ant-border-color:       #434343;
+        --ant-border-color-split: #303030;
+
+        --ant-box-shadow:          0 1px 2px 0 rgba(0, 0, 0, 0.3),
+                                   0 1px 6px -1px rgba(0, 0, 0, 0.2),
+                                   0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        --ant-box-shadow-secondary: 0 6px 16px 0 rgba(0, 0, 0, 0.4),
+                                    0 3px 6px -4px rgba(0, 0, 0, 0.5),
+                                    0 9px 28px 8px rgba(0, 0, 0, 0.3);
+    }
+}

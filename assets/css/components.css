@@ -1,0 +1,190 @@
+/**
+ * 通用组件
+ */
+
+/* ==================== 容器 ==================== */
+.slv-container {
+    width: 100%;
+    max-width: calc(var(--slv-content-wide) + var(--slv-space-8) * 2);
+    margin: 0 auto;
+    padding: 0 var(--slv-space-8);
+}
+
+.slv-container--narrow {
+    max-width: calc(var(--slv-content-narrow) + var(--slv-space-8) * 2);
+}
+
+.slv-container--wide {
+    max-width: calc(var(--slv-content-max) + var(--slv-space-8) * 2);
+}
+
+/* ==================== 按钮 ==================== */
+.slv-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--slv-space-2);
+    padding: var(--slv-space-2) var(--slv-space-5);
+    font-size: var(--slv-font-size-base);
+    font-weight: var(--slv-weight-medium);
+    line-height: 1.5;
+    color: var(--slv-text-primary);
+    background: var(--slv-bg-subtle);
+    border: 1px solid var(--slv-border-base);
+    border-radius: var(--slv-radius-md);
+    cursor: pointer;
+    transition: all var(--slv-duration-fast) var(--slv-ease-natural);
+    text-decoration: none;
+}
+
+.slv-button:hover,
+.slv-button:focus {
+    background: var(--slv-bg-muted);
+    border-color: var(--slv-border-strong);
+    color: var(--slv-text-primary);
+    text-decoration: none;
+}
+
+.slv-button--primary {
+    background: var(--slv-color-primary);
+    color: var(--slv-text-inverse);
+    border-color: var(--slv-color-primary);
+    font-weight: var(--slv-weight-bold);
+}
+
+.slv-button--primary:hover,
+.slv-button--primary:focus {
+    background: var(--slv-color-primary-hover);
+    border-color: var(--slv-color-primary-hover);
+    color: var(--slv-text-inverse);
+}
+
+/* ==================== 徽章 ==================== */
+.slv-badge {
+    display: inline-block;
+    padding: 2px var(--slv-space-2);
+    font-size: var(--slv-font-size-xs);
+    font-weight: var(--slv-weight-medium);
+    line-height: 1.5;
+    border-radius: var(--slv-radius-full);
+    white-space: nowrap;
+}
+
+.slv-badge--free,
+.slv-access-state--public {
+    background: var(--slv-green-1);
+    color: var(--slv-green-9);
+}
+
+.slv-badge--paid,
+.slv-access-state--purchase {
+    background: #fff3e6;
+    color: var(--slv-orange-8);
+}
+
+.slv-access-state--member,
+.slv-access-state--level {
+    background: #e6f0ff;
+    color: var(--slv-blue-8);
+}
+
+.slv-access-state--subscriber {
+    background: #f3e6ff;
+    color: var(--slv-purple-8);
+}
+
+.slv-access-state--purchased {
+    background: var(--slv-green-1);
+    color: var(--slv-green-9);
+}
+
+.slv-access-state--login_required {
+    background: var(--slv-gray-100);
+    color: var(--slv-gray-700);
+}
+
+.slv-access-state--locked {
+    background: #ffeaea;
+    color: var(--slv-red-8);
+}
+
+.slv-access-state--preview {
+    background: #fff8e6;
+    color: #8a6d00;
+}
+
+/* ==================== 面包屑 ==================== */
+.slv-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--slv-space-2);
+    font-size: var(--slv-font-size-sm);
+    color: var(--slv-text-secondary);
+    margin-bottom: var(--slv-space-6);
+}
+
+.slv-breadcrumb__sep {
+    color: var(--slv-text-muted);
+}
+
+/* ==================== 空状态 ==================== */
+.slv-no-results {
+    padding: var(--slv-space-16) var(--slv-space-6);
+    text-align: center;
+    color: var(--slv-text-secondary);
+}
+
+/* ==================== 分页 ==================== */
+.slv-main .pagination,
+.slv-main .navigation.pagination {
+    margin: var(--slv-space-12) 0;
+    text-align: center;
+}
+
+.slv-main .pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 var(--slv-space-2);
+    margin: 0 2px;
+    font-size: var(--slv-font-size-sm);
+    color: var(--slv-text-primary);
+    background: var(--slv-bg-subtle);
+    border: 1px solid var(--slv-border-subtle);
+    border-radius: var(--slv-radius-md);
+    text-decoration: none;
+    transition: all var(--slv-duration-fast) var(--slv-ease-natural);
+}
+
+.slv-main .pagination .page-numbers:hover,
+.slv-main .pagination .page-numbers.current {
+    background: var(--slv-color-primary);
+    color: var(--slv-text-inverse);
+    border-color: var(--slv-color-primary);
+}
+
+/* ==================== 通知块 ==================== */
+.slv-notice {
+    padding: var(--slv-space-4) var(--slv-space-5);
+    border-radius: var(--slv-radius-md);
+    border-left: 4px solid var(--slv-color-primary);
+    background: var(--slv-bg-subtle);
+    margin: var(--slv-space-6) 0;
+}
+
+.slv-notice--info {
+    border-left-color: var(--slv-blue-6);
+    background: #f0f7ff;
+}
+
+.slv-notice--warning {
+    border-left-color: var(--slv-orange-6);
+    background: #fff8e6;
+}
+
+.slv-notice--danger {
+    border-left-color: var(--slv-red-6);
+    background: #fff0f0;
+}

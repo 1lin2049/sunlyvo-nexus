@@ -1,0 +1,309 @@
+/**
+ * Ant Design ProLayout 风格布局
+ *
+ * 基于 Ant Design 布局规范：
+ * - 一级导航左对齐靠近 Logo
+ * - 二级菜单右对齐
+ * - 顶部导航高度 64px
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+/* ==================== 顶部导航 ==================== */
+.slv-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--ant-pro-layout-header-height);
+    background: var(--ant-bg-container);
+    border-bottom: 1px solid var(--ant-border-color-split);
+    box-shadow: var(--ant-box-shadow);
+}
+
+.slv-header__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: var(--ant-pro-layout-page-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ant-pro-layout-page-padding);
+    gap: var(--ant-margin-lg);
+}
+
+/* Logo 区（一级导航左对齐） */
+.slv-header__brand {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.slv-header__logo {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 600;
+    color: var(--ant-text-primary);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color var(--ant-motion-duration-mid) var(--ant-motion-ease-out);
+}
+
+.slv-header__logo:hover {
+    color: var(--ant-color-primary);
+}
+
+/* 一级导航 */
+.slv-header__nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: var(--ant-margin-lg);
+}
+
+.slv-header__nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: var(--ant-font-size);
+    color: var(--ant-text-secondary);
+    text-decoration: none;
+    transition: color var(--ant-motion-duration-mid) var(--ant-motion-ease-out);
+}
+
+.slv-header__nav-item:hover,
+.slv-header__nav-item.is-active {
+    color: var(--ant-color-primary);
+}
+
+.slv-header__nav-item.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--ant-color-primary);
+    border-radius: 2px 2px 0 0;
+}
+
+/* 辅助菜单（二级右对齐） */
+.slv-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin);
+    margin-left: auto;
+}
+
+/* ==================== 内容区 ==================== */
+.slv-content {
+    max-width: var(--ant-pro-layout-page-max-width);
+    margin: 0 auto;
+    padding: var(--ant-pro-layout-page-padding);
+}
+
+/* ==================== 卡片（Ant Design ProCard 风格） ==================== */
+.slv-card {
+    background: var(--ant-bg-container);
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--ant-border-color-split);
+    box-shadow: var(--ant-box-shadow);
+    overflow: hidden;
+}
+
+.slv-card__header {
+    padding: var(--ant-margin) var(--ant-margin-lg);
+    border-bottom: 1px solid var(--ant-border-color-split);
+    font-size: var(--ant-font-size-heading-5);
+    font-weight: 600;
+    color: var(--ant-text-primary);
+}
+
+.slv-card__body {
+    padding: var(--ant-margin-lg);
+}
+
+/* ==================== 页面标题（PageContainer 风格） ==================== */
+.slv-page-header {
+    margin-bottom: var(--ant-margin-lg);
+}
+
+.slv-page-header__title {
+    font-size: var(--ant-font-size-heading-3);
+    font-weight: 600;
+    color: var(--ant-text-primary);
+    margin: 0 0 var(--ant-margin-xs);
+    line-height: 1.3;
+}
+
+.slv-page-header__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin-xs);
+    font-size: var(--ant-font-size-sm);
+    color: var(--ant-text-tertiary);
+    margin-bottom: var(--ant-margin-sm);
+}
+
+.slv-page-header__breadcrumb a {
+    color: var(--ant-text-secondary);
+    text-decoration: none;
+}
+
+.slv-page-header__breadcrumb a:hover {
+    color: var(--ant-color-primary);
+}
+
+/* ==================== 按钮（Ant Design Button 风格） ==================== */
+.slv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ant-margin-xs);
+    height: var(--ant-control-height);
+    padding: 0 var(--ant-margin-sm);
+    font-size: var(--ant-font-size);
+    line-height: 1;
+    border-radius: var(--ant-border-radius);
+    border: 1px solid var(--ant-border-color);
+    background: var(--ant-bg-container);
+    color: var(--ant-text-primary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--ant-motion-duration-mid) var(--ant-motion-ease-out);
+    user-select: none;
+}
+
+.slv-btn:hover {
+    color: var(--ant-color-primary);
+    border-color: var(--ant-color-primary);
+}
+
+.slv-btn--primary {
+    background: var(--ant-color-primary);
+    border-color: var(--ant-color-primary);
+    color: #000;
+    font-weight: 600;
+}
+
+.slv-btn--primary:hover {
+    background: var(--ant-color-primary-hover);
+    border-color: var(--ant-color-primary-hover);
+    color: #000;
+}
+
+.slv-btn--primary:active {
+    background: var(--ant-color-primary-active);
+    border-color: var(--ant-color-primary-active);
+}
+
+.slv-btn--danger {
+    color: var(--ant-color-error);
+    border-color: var(--ant-color-error);
+}
+
+.slv-btn--danger:hover {
+    background: var(--ant-color-error);
+    color: #fff;
+}
+
+.slv-btn--block {
+    width: 100%;
+}
+
+/* ==================== 标签（Ant Design Tag 风格） ==================== */
+.slv-tag {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 8px;
+    font-size: var(--ant-font-size-sm);
+    line-height: 1;
+    border-radius: var(--ant-border-radius-sm);
+    background: var(--ant-gray-3);
+    color: var(--ant-text-secondary);
+}
+
+.slv-tag--success {
+    background: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.slv-tag--warning {
+    background: #fffbe6;
+    color: #d48806;
+    border: 1px solid #ffe58f;
+}
+
+.slv-tag--error {
+    background: #fff2f0;
+    color: #cf1322;
+    border: 1px solid #ffccc7;
+}
+
+.slv-tag--processing {
+    background: #e6f4ff;
+    color: #0958d9;
+    border: 1px solid #91caff;
+}
+
+/* ==================== 表格（Ant Design Table 风格） ==================== */
+.slv-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--ant-bg-container);
+    border-radius: var(--ant-border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ant-box-shadow);
+}
+
+.slv-table th {
+    text-align: left;
+    padding: var(--ant-margin-sm) var(--ant-margin);
+    background: var(--ant-gray-2);
+    border-bottom: 1px solid var(--ant-border-color-split);
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    color: var(--ant-text-secondary);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.slv-table td {
+    padding: var(--ant-margin) var(--ant-margin);
+    border-bottom: 1px solid var(--ant-border-color-split);
+    color: var(--ant-text-primary);
+}
+
+.slv-table tr:last-child td {
+    border-bottom: none;
+}
+
+.slv-table tr:hover td {
+    background: var(--ant-gray-2);
+    transition: background var(--ant-motion-duration-fast) var(--ant-motion-ease-out);
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 768px) {
+    :root {
+        --ant-pro-layout-header-height: 56px;
+        --ant-pro-layout-page-padding: 16px;
+        --ant-font-size-heading-3: 20px;
+        --ant-font-size-heading-4: 18px;
+    }
+
+    .slv-header__nav {
+        display: none;
+    }
+
+    .slv-header__actions {
+        margin-left: auto;
+    }
+
+    .slv-content {
+        padding: var(--ant-pro-layout-page-padding);
+    }
+}

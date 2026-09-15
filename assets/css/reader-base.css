@@ -1,0 +1,291 @@
+/**
+ * Reader 子系统基础样式
+ *
+ * 隔离说明：
+ * - 本文件只在章节/合集阅读上下文加载
+ * - 不依赖 main.css / mobile.css
+ * - 所有选择器以 .slv-reader 为根
+ *
+ * @package SunLyvo_Nexus
+ * @since   1.0.0
+ */
+
+/* ==================== 阅读进度条 ==================== */
+.slv-reader__progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.slv-reader__progress-bar {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--wp--preset--color--brand-6);
+    transition: width 100ms linear;
+}
+
+/* ==================== 容器 ==================== */
+.slv-reader__container {
+    max-width: calc(var(--wp--style--global--content-size) + var(--wp--preset--spacing--60) * 2);
+    margin: 0 auto;
+    padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--50) var(--wp--preset--spacing--80);
+}
+
+/* ==================== 章节头部 ==================== */
+.slv-chapter__header {
+    margin-bottom: var(--wp--preset--spacing--70);
+    padding-bottom: var(--wp--preset--spacing--50);
+    border-bottom: 1px solid var(--wp--preset--color--gray-4);
+}
+
+.slv-chapter__number {
+    display: inline-block;
+    font-family: var(--wp--preset--font-family--mono);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--gray-7);
+    padding: 2px var(--wp--preset--spacing--30);
+    background: var(--wp--preset--color--gray-3);
+    border-radius: 9999px;
+    margin-bottom: var(--wp--preset--spacing--30);
+}
+
+.slv-chapter__title {
+    margin: 0 0 var(--wp--preset--spacing--40);
+    font-size: var(--wp--preset--font-size--xxx-large);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.slv-chapter__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wp--preset--spacing--40);
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--gray-7);
+}
+
+.slv-chapter__meta-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ==================== 章节正文 ==================== */
+.slv-chapter__body {
+    font-size: var(--wp--preset--font-size--large);
+    line-height: 1.9;
+    color: var(--wp--preset--color--gray-10);
+}
+
+.slv-chapter__body p {
+    margin-bottom: var(--wp--preset--spacing--50);
+}
+
+.slv-chapter__body h2 {
+    margin: var(--wp--preset--spacing--80) 0 var(--wp--preset--spacing--40);
+    font-size: var(--wp--preset--font-size--xx-large);
+    padding-bottom: var(--wp--preset--spacing--20);
+    border-bottom: 1px solid var(--wp--preset--color--gray-4);
+    scroll-margin-top: 80px;
+}
+
+.slv-chapter__body h3 {
+    margin: var(--wp--preset--spacing--60) 0 var(--wp--preset--spacing--30);
+    font-size: var(--wp--preset--font-size--x-large);
+    scroll-margin-top: 80px;
+}
+
+.slv-chapter__body h4 {
+    margin: var(--wp--preset--spacing--50) 0 var(--wp--preset--spacing--30);
+    font-size: var(--wp--preset--font-size--large);
+    scroll-margin-top: 80px;
+}
+
+.slv-chapter__body blockquote {
+    margin: var(--wp--preset--spacing--50) 0;
+    padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--50);
+    border-left: 4px solid var(--wp--preset--color--brand-6);
+    background: var(--wp--preset--color--gray-2);
+    color: var(--wp--preset--color--gray-8);
+    border-radius: 0 6px 6px 0;
+}
+
+.slv-chapter__body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.slv-chapter__body pre {
+    background: #1d2327;
+    color: #e6edf3;
+    padding: var(--wp--preset--spacing--50);
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: var(--wp--preset--font-size--small);
+    line-height: 1.6;
+    margin: var(--wp--preset--spacing--50) 0;
+    font-family: var(--wp--preset--font-family--mono);
+}
+
+.slv-chapter__body code:not(pre code) {
+    padding: 2px 6px;
+    background: var(--wp--preset--color--gray-3);
+    border-radius: 2px;
+    font-size: 0.9em;
+    color: var(--wp--preset--color--brand-9);
+    font-family: var(--wp--preset--font-family--mono);
+}
+
+.slv-chapter__body ul,
+.slv-chapter__body ol {
+    margin: var(--wp--preset--spacing--40) 0 var(--wp--preset--spacing--50);
+    padding-left: var(--wp--preset--spacing--60);
+}
+
+.slv-chapter__body li {
+    margin-bottom: var(--wp--preset--spacing--20);
+}
+
+.slv-chapter__body img {
+    border-radius: 6px;
+    margin: var(--wp--preset--spacing--50) auto;
+    height: auto;
+}
+
+.slv-chapter__body a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+/* ==================== 阅读通知 ==================== */
+.slv-chapter__notice {
+    padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
+    border-radius: 6px;
+    margin-bottom: var(--wp--preset--spacing--60);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--wp--preset--spacing--40);
+    flex-wrap: wrap;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+.slv-chapter__notice--preview {
+    background: #fff8e6;
+    border-left: 4px solid #faad14;
+    color: #6d4c00;
+}
+
+.slv-chapter__notice--login {
+    background: #f0f7ff;
+    border-left: 4px solid #1677ff;
+    color: #003a8c;
+}
+
+/* ==================== 付费墙 ==================== */
+.slv-chapter__paywall {
+    margin: var(--wp--preset--spacing--80) 0;
+    padding: var(--wp--preset--spacing--60);
+    text-align: center;
+    background: var(--wp--preset--color--gray-2);
+    border: 2px dashed var(--wp--preset--color--gray-5);
+    border-radius: 8px;
+}
+
+.slv-chapter__paywall-title {
+    font-size: var(--wp--preset--font-size--x-large);
+    font-weight: 700;
+    margin-bottom: var(--wp--preset--spacing--40);
+    color: var(--wp--preset--color--gray-10);
+}
+
+.slv-chapter__paywall-desc {
+    color: var(--wp--preset--color--gray-7);
+    font-size: var(--wp--preset--font-size--small);
+    margin-bottom: var(--wp--preset--spacing--50);
+}
+
+.slv-chapter__paywall-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--wp--preset--spacing--30);
+}
+
+.slv-chapter__paywall--full {
+    margin-top: 0;
+}
+
+/* ==================== 章节导航 ==================== */
+.slv-chapter__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--wp--preset--spacing--40);
+    margin: var(--wp--preset--spacing--80) 0 var(--wp--preset--spacing--70);
+    padding-top: var(--wp--preset--spacing--60);
+    border-top: 1px solid var(--wp--preset--color--gray-4);
+}
+
+.slv-chapter__nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wp--preset--spacing--20);
+    padding: var(--wp--preset--spacing--40);
+    border: 1px solid var(--wp--preset--color--gray-4);
+    border-radius: 6px;
+    color: inherit;
+    text-decoration: none;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slv-chapter__nav-item:hover {
+    border-color: var(--wp--preset--color--brand-6);
+    background: var(--wp--preset--color--gray-2);
+    text-decoration: none;
+    color: inherit;
+}
+
+.slv-chapter__nav-item--next {
+    text-align: right;
+}
+
+.slv-chapter__nav-label {
+    font-size: 12px;
+    color: var(--wp--preset--color--gray-7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.slv-chapter__nav-title {
+    font-weight: 500;
+    font-size: var(--wp--preset--font-size--small);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==================== 响应式 ==================== */
+@media (max-width: 640px) {
+    .slv-reader__container {
+        padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40) var(--wp--preset--spacing--70);
+    }
+
+    .slv-chapter__nav {
+        grid-template-columns: 1fr;
+    }
+
+    .slv-chapter__nav-item--next {
+        text-align: left;
+    }
+
+    .slv-chapter__paywall {
+        padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40);
+    }
+}
